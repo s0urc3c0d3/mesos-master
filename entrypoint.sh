@@ -10,4 +10,4 @@ do
 done
 ZK_IPs=$(echo $ZK_IPs | sed 's/,,//g')
 
-exec /usr/sbin/mesos-master --zk=zk://${ZK_IPs}/mesos --work-dir=${MESOS_WORK_DIR} --quorum=${MESOS_QUORUM} --port=${MESOS_PORT} --log_dir=${MESOS_LOG_DIR} --registry=${MESOS_REGISTRY}
+exec /usr/sbin/mesos-master --zk=zk://${ZK_IPs}/mesos --work_dir=${MESOS_WORK_DIR} --quorum=${MESOS_QUORUM} --port=${MESOS_PORT} --log_dir=${MESOS_LOG_DIR} --registry=${MESOS_REGISTRY}

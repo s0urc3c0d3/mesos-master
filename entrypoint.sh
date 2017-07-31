@@ -12,4 +12,4 @@ ZK_IPs=$(echo $ZK_IPs | sed 's/,,//g')
 
 echo "zk://${ZK_IPs}/mesos" > /etc/mesos/zk
 
-exec /usr/sbin/mesos-master --zk=zk://${ZK_IPs}/mesos --work_dir=${MESOS_WORK_DIR} --quorum=${MESOS_QUORUM} --port=${MESOS_PORT} --log_dir=${MESOS_LOG_DIR} --registry=${MESOS_REGISTRY} --ip=$(curl -s rancher-metadata.rancher.internal/2015-12-19/self/container/primary_ip) --hostname=$(curl -s rancher-metadata.rancher.internal/2015-12-19/self/host/agent_ip):${MESOS_PORT}
+exec /usr/sbin/mesos-master --zk=zk://${ZK_IPs}/mesos --work_dir=${MESOS_WORK_DIR} --quorum=${MESOS_QUORUM} --port=${MESOS_PORT} --log_dir=${MESOS_LOG_DIR} --registry=${MESOS_REGISTRY} --ip=$(curl -s rancher-metadata.rancher.internal/2015-12-19/self/container/primary_ip) --hostname=$(curl -s rancher-metadata.rancher.internal/2015-12-19/self/host/agent_ip)
